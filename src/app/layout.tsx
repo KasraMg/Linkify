@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { HeroUiProvider } from "./Providers/HerouiProvider"; 
+import { HeroUiProvider } from "./Providers/HerouiProvider";
+import Navbar from "@/components/modules/navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <HeroUiProvider>{children}</HeroUiProvider>;
+        <Navbar />
+        <HeroUiProvider>{children}</HeroUiProvider>
       </body>
     </html>
   );
