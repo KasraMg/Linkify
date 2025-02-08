@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HeroUiProvider } from "./Providers/HerouiProvider";
 import Navbar from "@/components/modules/navbar/Navbar";
+import { ThemeProvider } from "next-themes";
+import { ShootingStars } from "@/components/modules/shootingStars/shooting-stars";
+import {
+  ClerkProvider
+} from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +30,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        <HeroUiProvider>{children}</HeroUiProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} bg-[#ededed] text-black antialiased dark:bg-[#0a0a0a] dark:text-white`}
+        > 
+          <ThemeProvider attribute="class">
+            <Navbar />
+            <HeroUiProvider>
+              <div className="relative z-50">{children}</div>
+            </HeroUiProvider>
+            <ShootingStars />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

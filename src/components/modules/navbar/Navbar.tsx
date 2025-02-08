@@ -1,12 +1,22 @@
 "use client";
 
 import { Button } from "@heroui/button";
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
+import { CiLight } from "react-icons/ci";
 import { MdOutlineDarkMode } from "react-icons/md";
-
+import { 
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+ 
+
   return (
-    <div className="flex bg-[#0a0a0a] z-50 relative py-4 px-4 border-b justify-between items-center border-white">
+    <div className="relative z-[999] flex items-center justify-between border-b border-[#0a0a0a] bg-[#00000008] dark:border-white  px-4 py-2">
       <div className="flex items-center gap-1">
         <Image
           src={"/logo.png"}
@@ -16,11 +26,29 @@ const Navbar = () => {
           alt="logo"
         />
         <p className="text-2xl font-bold">Linkify</p>
-        <MdOutlineDarkMode className="text-2xl ml-5 cursor-pointer hover:text-red-600 transition-colors" />
+
+        {theme !== "dark" ? (
+          <MdOutlineDarkMode
+            onClick={() => setTheme("dark")}
+            className="ml-5 cursor-pointer text-2xl transition-colors hover:text-red-600"
+          />
+        ) : (
+          <CiLight
+            onClick={() => setTheme("light")}
+            className="ml-5 cursor-pointer text-2xl transition-colors hover:text-red-600"
+          />
+        )}
       </div>
       <div className="flex items-center gap-2">
-        <Button variant="shadow">Login / Register</Button>
-        <Button variant="bordered">FA</Button>
+
+      <SignedIn>
+              <UserButton showName/>
+            </SignedIn>
+            <SignedOut>
+            <Link href={'/sign-in'}><Button variant="shadow">Login / Register</Button></Link>
+
+            </SignedOut>
+        <Button className="dark:text-white" variant="bordered">FA</Button>
       </div>
     </div>
   );
