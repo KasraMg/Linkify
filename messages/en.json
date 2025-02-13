@@ -1,0 +1,15 @@
+{
+  "HomePage": {
+    "title": "Instagram-Youtube Video Download",
+    "description": "First, click on the icon of the platform you want and then write the link in the input.",
+    "download": "download",
+    "youtubePlaceHolder": "Paste Url Youtube",
+    "instagramPlaceHolder": "Paste Url Instagram"
+  },
+  "Navbar":{
+    "title":"Linkify",
+    "sign":"Sign in",
+    "faLang":"Fa",
+    "enLang":"En"
+  }
+}
