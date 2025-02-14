@@ -1,14 +1,18 @@
 "use client";
-
-import { Button } from "@heroui/button";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineDarkMode } from "react-icons/md";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
+import { Button } from "@heroui/button";
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const t = useTranslations("Navbar");
@@ -41,11 +45,18 @@ const Navbar = () => {
         <SignedIn>
           <UserButton showName />
         </SignedIn>
-        <SignedOut > 
-            <SignInButton mode="modal"/> 
-        </SignedOut>
-    
-        <LanguageSwitcher /> 
+
+        <Button variant="ghost">
+          <SignedOut>
+            <SignInButton mode="modal" />
+          </SignedOut>
+          {` / `}
+          <SignedOut>
+            <SignUpButton mode="modal" />
+          </SignedOut>
+        </Button>
+
+        <LanguageSwitcher />
       </div>
     </div>
   );

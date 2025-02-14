@@ -6,11 +6,160 @@
     "youtubePlaceHolder": "لینک یوتیوب رو قرار بدید",
     "instagramPlaceHolder": "لینک اینستگرام رو قرار بدید"
   },
-  "Navbar":{
-    "title":"لینکیفای",
-    "sign":"ورود",
-    "faLang":"فارسی",
-    "enLang":"انگلیسی"
+  "Navbar": {
+    "title": "لینکیفای",
+    "sign": "ورود",
+    "faLang": "فارسی",
+    "enLang": "انگلیسی"
+  },
 
+  "signUp": {
+    "start": {
+      "title": "ایجاد حساب کاربری",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "actionText": "حساب کاربری دارید؟",
+      "actionLink": "ورود"
+    },
+    "emailLink": {
+      "title": "ایمیل خود را تأیید کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "formTitle": "لینک تأیید",
+      "formSubtitle": "از لینک تأییدی که به ایمیل شما ارسال شده استفاده کنید",
+      "resendButton": "لینک را دریافت نکردید؟ ارسال مجدد",
+      "verified": {
+        "title": "ثبت‌نام با موفقیت انجام شد"
+      },
+      "loading": {
+        "title": "در حال ثبت‌نام..."
+      },
+      "verifiedSwitchTab": {
+        "title": "ایمیل با موفقیت تأیید شد",
+        "subtitle": "به تب جدید باز شده برگردید تا ادامه دهید",
+        "subtitleNewTab": "به تب قبلی بازگردید تا ادامه دهید"
+      }
+    },
+    "emailCode": {
+      "title": "ایمیل خود را تأیید کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "formTitle": "کد تأیید",
+      "formSubtitle": "کد تأییدی که به ایمیل شما ارسال شده را وارد کنید",
+      "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
+    },
+    "phoneCode": {
+      "title": "شماره تلفن خود را تأیید کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "formTitle": "کد تأیید",
+      "formSubtitle": "کد تأییدی که به شماره تلفن شما ارسال شده را وارد کنید",
+      "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
+    },
+    "continue": {
+      "title": "تکمیل اطلاعات ناقص",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "actionText": "حساب کاربری دارید؟",
+      "actionLink": "ورود"
+    }
+  },
+  "unstable__errors": {
+    "form_password_incorrect": "رمز عبور وارد شده نادرست است.",
+    "form_password_length_too_short": "رمز عبور شما کوتاه است. حداقل ۸ کاراکتر لازم است.",
+    "form_password_not_strong_enough": "رمز عبور شما به اندازه کافی قوی نیست.",
+    "form_password_pwned": "این رمز عبور در یک نشت اطلاعاتی پیدا شده است. لطفاً رمز عبور دیگری انتخاب کنید.",
+    "form_identifier_not_found": "هیچ حسابی با این مشخصات یافت نشد.",
+    "form_param_format_invalid__email_address": "آدرس ایمیل معتبر نیست.",
+    "form_param_format_invalid__phone_number": "شماره تلفن معتبر نیست."
+  },
+  "formButtonPrimary": "ادامه",
+  "formButtonPrimary__verify": "تأیید",
+  "formButtonReset": "لغو",
+  "formButtonDestructive": "حذف",
+  "actionLink": "بیشتر بدانید",
+  "actionText": "اقدام کنید",
+
+  "successMessage": "عملیات با موفقیت انجام شد.",
+  "errorMessage": "خطایی رخ داده است. لطفاً دوباره تلاش کنید.",
+  "formFieldHintText__optional": "اختیاری",
+  "formFieldHintText__required": "الزامی",
+  "formFieldInputPlaceholder__emailAddress_username": "ایمیل یا نام کاربری خود را وارد کنید",
+  "formFieldLabel__emailAddress_username": "ایمیل یا نام کاربری",
+  "formFieldInputPlaceholder__emailAddress": "آدرس ایمیل خود را وارد کنید",
+  "formFieldLabel__emailAddress": "آدرس ایمیل",
+  "formFieldInputPlaceholder__username": "نام کاربری خود را وارد کنید",
+  "formFieldLabel__username": "نام کاربری",
+  "formFieldInputPlaceholder__password": "رمز عبور خود را وارد کنید",
+  "formFieldLabel__password": "رمز عبور",
+  "formFieldInputPlaceholder__phoneNumber": "شماره تلفن خود را وارد کنید",
+  "formFieldLabel__phoneNumber": "شماره تلفن",
+ 
+    "socialButtonsBlockButton": "ادامه با {{provider}}",
+    "socialButtonsBlockButtonManyInView": "{{provider}}",
+    "providers": {
+      "google": "گوگل",
+      "github": "گیت‌هاب",
+      "facebook": "فیس‌بوک",
+      "apple": "اپل"
+    },
+  
+  "loading": "در حال بارگذاری...",
+  "dates": {
+    "lastDay": "دیروز در {{ date | timeString('fa-IR') }}",
+    "next6Days": "{{ date | weekday('fa-IR','long') }} در {{ date | timeString('fa-IR') }}",
+    "sameDay": "امروز در {{ date | timeString('fa-IR') }}"
+  },
+  "signIn": {
+    "start": {
+      "title": "ورود به {{applicationName}}",
+      "subtitle": "برای ادامه وارد شوید",
+      "actionText": "حساب کاربری ندارید؟",
+      "actionLink": "ثبت‌نام"
+    },
+    "password": {
+      "title": "رمز عبور خود را وارد کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "actionLink": "رمز عبور را فراموش کرده‌اید؟"
+    },
+    "emailCode": {
+      "title": "ایمیل خود را تأیید کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "formTitle": "کد تأیید",
+      "formSubtitle": "کد تأییدی که به ایمیل شما ارسال شده را وارد کنید",
+      "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
+    },
+    "phoneCode": {
+      "title": "شماره تلفن خود را تأیید کنید",
+      "subtitle": "برای ادامه به {{applicationName}}",
+      "formTitle": "کد تأیید",
+      "formSubtitle": "کد تأییدی که به شماره تلفن شما ارسال شده را وارد کنید",
+      "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
+    }
+  },
+  "forgotPassword": {
+    "title": "بازیابی رمز عبور",
+    "subtitle": "برای بازیابی رمز عبور، ایمیل یا شماره تلفن خود را وارد کنید",
+    "formTitle": "بازیابی رمز عبور",
+    "formSubtitle": "لینک بازیابی رمز عبور به ایمیل شما ارسال خواهد شد",
+    "resendButton": "لینک را دریافت نکردید؟ ارسال مجدد",
+    "successMessage": "لینک بازیابی رمز عبور به ایمیل شما ارسال شد."
+  },
+  "userProfile": {
+    "profilePage": {
+      "title": "پروفایل کاربری",
+      "subtitle": "اطلاعات شخصی خود را به‌روزرسانی کنید",
+      "successMessage": "پروفایل شما با موفقیت به‌روزرسانی شد."
+    },
+    "passwordPage": {
+      "title": "تغییر رمز عبور",
+      "subtitle": "رمز عبور جدید خود را وارد کنید",
+      "successMessage": "رمز عبور شما با موفقیت تغییر یافت."
+    },
+    "emailAddressPage": {
+      "title": "مدیریت ایمیل‌ها",
+      "subtitle": "ایمیل‌های خود را اضافه یا حذف کنید",
+      "successMessage": "ایمیل شما با موفقیت تأیید شد."
+    },
+    "phoneNumberPage": {
+      "title": "مدیریت شماره تلفن‌ها",
+      "subtitle": "شماره تلفن‌های خود را اضافه یا حذف کنید",
+      "successMessage": "شماره تلفن شما با موفقیت تأیید شد."
+    }
   }
 }

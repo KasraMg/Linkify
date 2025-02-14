@@ -14,4 +14,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
- 
+ .cl-internal-df7v37.cl-internal-df7v37{
+  display: none !important;
+ }
+ :lang("fa") + .cl-formFieldInput__password{
+padding: 0.375rem 0.75rem 0.375rem 2.5rem !important;
+ }
+ :lang("fa") + .cl-internal-hqshcm{
+  left: 0px !important;
+  right: auto !important;
+ }
+ :lang("fa") + .cl-form {
+  direction: rtl;
+ }

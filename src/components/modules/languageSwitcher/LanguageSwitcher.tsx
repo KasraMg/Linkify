@@ -29,7 +29,7 @@ function LanguageSwitcherContent() {
 
   return (
     <Button
-      onClick={() => switchLanguage(locale === "en" ? "fa" : "en")}
+      onPress={() => switchLanguage(locale === "en" ? "fa" : "en")}
       className="dark:text-white"
       variant="bordered"
     >
