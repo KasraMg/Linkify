@@ -39,9 +39,12 @@ export default async function RootLayout({
 
   return (
     <ClerkProvider
+    
       appearance={{
         baseTheme: dark,
+        
       }}
+      
       localization={locale === "en" ? en : fa}
     >
       <html lang={locale}>

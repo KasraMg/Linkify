@@ -16,13 +16,13 @@
   "signUp": {
     "start": {
       "title": "ایجاد حساب کاربری",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": " برای ادامه به لینکیفای",
       "actionText": "حساب کاربری دارید؟",
       "actionLink": "ورود"
     },
     "emailLink": {
       "title": "ایمیل خود را تأیید کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": "برای ادامه به لینکیفای",
       "formTitle": "لینک تأیید",
       "formSubtitle": "از لینک تأییدی که به ایمیل شما ارسال شده استفاده کنید",
       "resendButton": "لینک را دریافت نکردید؟ ارسال مجدد",
@@ -40,34 +40,636 @@
     },
     "emailCode": {
       "title": "ایمیل خود را تأیید کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": "برای ادامه به لینکیفای",
       "formTitle": "کد تأیید",
       "formSubtitle": "کد تأییدی که به ایمیل شما ارسال شده را وارد کنید",
       "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
     },
     "phoneCode": {
       "title": "شماره تلفن خود را تأیید کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": "برای ادامه به لینکیفای",
       "formTitle": "کد تأیید",
       "formSubtitle": "کد تأییدی که به شماره تلفن شما ارسال شده را وارد کنید",
       "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
     },
     "continue": {
       "title": "تکمیل اطلاعات ناقص",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": "برای ادامه به لینکیفای",
       "actionText": "حساب کاربری دارید؟",
       "actionLink": "ورود"
     }
   },
+
   "unstable__errors": {
-    "form_password_incorrect": "رمز عبور وارد شده نادرست است.",
-    "form_password_length_too_short": "رمز عبور شما کوتاه است. حداقل ۸ کاراکتر لازم است.",
-    "form_password_not_strong_enough": "رمز عبور شما به اندازه کافی قوی نیست.",
-    "form_password_pwned": "این رمز عبور در یک نشت اطلاعاتی پیدا شده است. لطفاً رمز عبور دیگری انتخاب کنید.",
-    "form_identifier_not_found": "هیچ حسابی با این مشخصات یافت نشد.",
+    "external_account_not_found": "حساب خارجی یافت نشد.",
+    "identification_deletion_failed": "حذف شناسه با مشکل مواجه شد.",
+    "phone_number_exists": "این شماره تلفن قبلاً ثبت شده است.",
+    "form_identifier_not_found": "شناسه وارد شده یافت نشد.",
+    "captcha_unavailable": "کپچا در دسترس نیست.",
+    "captcha_invalid": "کپچای وارد شده معتبر نیست.",
+    "passkey_not_supported": "کلید عبور پشتیبانی نمی‌شود.",
+    "passkey_pa_not_supported": "کلید عبور در حالت پشتیبانی نشده است.",
+    "passkey_retrieval_cancelled": "دریافت کلید عبور لغو شد.",
+    "passkey_registration_cancelled": "ثبت نام کلید عبور لغو شد.",
+    "passkey_already_exists": "کلید عبور قبلاً ثبت شده است.",
+    "web3_missing_identifier": "شناسه Web3 یافت نشد.",
+    "form_password_pwned": "این رمز عبور مناسب نیست. لطفاً رمز عبور دیگری انتخاب کنید.",
+    "form_password_pwned__sign_in": "رمز عبور وارد شده در یک نشت اطلاعاتی یافت شده است. لطفاً رمز عبور خود را تغییر دهید.",
+    "form_username_invalid_length": "نام کاربری باید بین {{min_length}} تا {{max_length}} کاراکتر باشد.",
+    "form_username_invalid_character": "نام کاربری شما باید انگلیسی باشد.",
+    "form_param_format_invalid": "مقدار وارد شده در قالب نامعتبر است. لطفاً بررسی و اصلاح کنید.",
     "form_param_format_invalid__email_address": "آدرس ایمیل معتبر نیست.",
-    "form_param_format_invalid__phone_number": "شماره تلفن معتبر نیست."
+    "form_param_format_invalid__phone_number": "شماره تلفن معتبر نیست.",
+    "form_password_length_too_short": "رمز عبور باید حداقل {{min_length}} کاراکتر داشته باشد.",
+    "form_param_nil": "مقدار وارد شده معتبر نیست.",
+    "form_code_incorrect": "کد وارد شده نادرست است.",
+    "form_password_incorrect": "رمز عبور وارد شده نادرست است.",
+    "form_password_validation_failed": "اعتبارسنجی رمز عبور شکست خورد.",
+    "not_allowed_access": "دسترسی مجاز نیست.",
+    "form_identifier_exists": "شناسه وارد شده قبلاً ثبت شده است.",
+    "form_identifier_exists__email_address": "آدرس ایمیل قبلاً ثبت شده است.",
+    "form_identifier_exists__username": "نام کاربری قبلاً ثبت شده است.",
+    "form_identifier_exists__phone_number": "این شماره تلفن قبلاً ثبت شده است.",
+    "form_password_not_strong_enough": "رمز عبور شما به اندازه کافی قوی نیست.",
+    "form_password_size_in_bytes_exceeded": "حجم رمز عبور بیش از حد مجاز است.",
+    "form_param_value_invalid": "مقدار وارد شده معتبر نیست.",
+    "passwordComplexity": {
+      "sentencePrefix": "",
+      "minimumLength": "رمز عبور شما باید حداقل {{length}} کاراکتر داشته باشد.",
+      "maximumLength": "رمز عبور شما باید کمتر از {{length}} کاراکتر باشد.",
+      "requireNumbers": "رمز عبور باید شامل حداقل یک عدد باشد.",
+      "requireLowercase": "رمز عبور باید حداقل یک حرف کوچک داشته باشد.",
+      "requireUppercase": "رمز عبور باید حداقل یک حرف بزرگ داشته باشد.",
+      "requireSpecialCharacter": "رمز عبور باید شامل حداقل یک کاراکتر خاص باشد."
+    },
+    "zxcvbn": {
+      "notEnough": "رمز عبور شما به اندازه کافی قوی نیست.",
+      "couldBeStronger": "رمز عبور شما کار می‌کند، اما می‌تواند قوی‌تر باشد. سعی کنید کاراکترهای بیشتری اضافه کنید.",
+      "goodPassword": "رمز عبور شما تمام شرایط لازم را دارد.",
+      "warnings": {
+        "straightRow": "رمز عبور شما شامل یک ردیف مستقیم از کاراکترهاست. سعی کنید ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "keyPattern": "رمز عبور شما شامل الگوهای صفحه‌کلید است. از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "simpleRepeat": "رمز عبور شما شامل تکرار ساده کاراکترهاست. از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "extendedRepeat": "رمز عبور شما شامل تکرار گسترده‌ای از کاراکترهاست.",
+        "sequences": "رمز عبور شما شامل دنباله‌های متوالی است. سعی کنید از ترکیب‌های پیچیده‌تری استفاده کنید.",
+        "recentYears": "رمز عبور شما شامل سال‌های اخیر است. سعی کنید از ترکیب‌های پیچیده‌تری استفاده کنید.",
+        "dates": "رمز عبور شما شامل تاریخ‌هاست. سعی کنید از ترکیب‌های پیچیده‌تری استفاده کنید.",
+        "topTen": "رمز عبور شما از ۱۰ رمز عبور رایج است. سعی کنید رمز عبور قوی‌تری انتخاب کنید.",
+        "topHundred": "رمز عبور شما از ۱۰۰ رمز عبور رایج است. سعی کنید رمز عبور قوی‌تری انتخاب کنید.",
+        "common": "رمز عبور شما بسیار رایج است. لطفاً رمز عبور قوی‌تری انتخاب کنید.",
+        "similarToCommon": "رمز عبور شما مشابه یک رمز عبور رایج است. لطفاً رمز عبور قوی‌تری انتخاب کنید.",
+        "wordByItself": "رمز عبور شما یک کلمه به‌تنهایی است. لطفاً از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "namesByThemselves": "رمز عبور شما نام‌های رایج است. لطفاً از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "commonNames": "رمز عبور شما از نام‌های رایج است. لطفاً از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "userInputs": "رمز عبور شما شامل ورودی‌های کاربری است. لطفاً از ترکیب‌های پیچیده‌تر استفاده کنید.",
+        "pwned": "این رمز عبور در یک نشت اطلاعاتی پیدا شده است. لطفاً رمز عبور دیگری انتخاب کنید."
+      },
+      "suggestions": {
+        "l33t": "استفاده از اعداد به‌جای حروف ممکن است کمک کند، اما باید پیچیدگی بیشتری داشته باشد.",
+        "reverseWords": "ترکیب کلمات به‌صورت معکوس می‌تواند کمک کند.",
+        "allUppercase": "استفاده از حروف بزرگ می‌تواند پیچیدگی رمز عبور را افزایش دهد.",
+        "capitalization": "استفاده از ترکیب حروف بزرگ و کوچک می‌تواند پیچیدگی رمز عبور را افزایش دهد.",
+        "dates": "از استفاده از تاریخ‌های ساده خودداری کنید.",
+        "recentYears": "از استفاده از سال‌های اخیر خودداری کنید.",
+        "associatedYears": "از استفاده از سال‌هایی که به شما مرتبط است خودداری کنید.",
+        "sequences": "از استفاده از دنباله‌های ساده خودداری کنید.",
+        "repeated": "از استفاده از تکرار کاراکترها خودداری کنید.",
+        "longerKeyboardPattern": "از استفاده از الگوهای ساده صفحه‌کلید خودداری کنید.",
+        "anotherWord": "استفاده از یک کلمه دیگر می‌تواند کمک کند.",
+        "useWords": "استفاده از کلمات مختلف می‌تواند پیچیدگی رمز عبور را افزایش دهد.",
+        "noNeed": "نیازی به استفاده از الگوهای پیچیده نیست، اما بهتر است رمز عبور را قوی‌تر کنید.",
+        "pwned": "این رمز عبور در یک نشت اطلاعاتی پیدا شده است. لطفاً رمز عبور دیگری انتخاب کنید."
+      }
+    },
+    "form_param_max_length_exceeded": "طول مقدار وارد شده از حد مجاز بیشتر است.",
+    "organization_minimum_permissions_needed": "برای انجام این عملیات حداقل مجوزهای لازم برای سازمان ضروری است.",
+    "already_a_member_in_organization": "شما قبلاً عضو این سازمان هستید.",
+    "organization_domain_common": "دامنه سازمان معمولی است. لطفاً دامنه خاص‌تری وارد کنید.",
+    "organization_domain_blocked": "دامنه سازمان مسدود شده است.",
+    "organization_domain_exists_for_enterprise_connection": "دامنه سازمان قبلاً برای اتصال به شرکت استفاده شده است.",
+    "organization_membership_quota_exceeded": "حد مجاز عضویت در سازمان تجاوز شده است."
   },
+
+  "reverification": {
+    "password": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "actionLink": "لینک اقدام"
+    },
+    "emailCode": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "formTitle": "عنوان فرم",
+      "resendButton": "دکمه ارسال مجدد"
+    },
+    "phoneCode": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "formTitle": "عنوان فرم",
+      "resendButton": "دکمه ارسال مجدد"
+    },
+    "phoneCodeMfa": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "formTitle": "عنوان فرم",
+      "resendButton": "دکمه ارسال مجدد"
+    },
+    "totpMfa": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "formTitle": "عنوان فرم"
+    },
+    "backupCodeMfa": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان"
+    },
+    "alternativeMethods": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "actionLink": "لینک اقدام",
+      "actionText": "متن اقدام",
+      "blockButton__emailCode": "دکمه بلوک کد ایمیل",
+      "blockButton__phoneCode": "دکمه بلوک کد تلفن",
+      "blockButton__password": "دکمه بلوک رمز عبور",
+      "blockButton__totp": "دکمه بلوک TOTP",
+      "blockButton__backupCode": "دکمه بلوک کد پشتیبان",
+      "getHelp": {
+        "title": "عنوان",
+        "content": "محتوا",
+        "blockButton__emailSupport": "دکمه بلوک پشتیبانی ایمیل"
+      }
+    },
+    "noAvailableMethods": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "message": "پیام"
+    }
+  },
+  "userProfile": {
+    "mobileButton__menu": "دکمه منو",
+    "formButtonPrimary__continue": "ادامه",
+    "formButtonPrimary__save": "ذخیره",
+    "formButtonPrimary__finish": "اتمام",
+    "formButtonPrimary__remove": "حذف",
+    "formButtonPrimary__add": "افزودن",
+    "formButtonReset": "برگشت",
+    "navbar": {
+      "title": "حساب کاربری",
+      "description": "ویرایش",
+      "account": "حساب",
+      "security": "امنیت"
+    },
+    "start": {
+      "headerTitle__account": "عنوان حساب",
+      "headerTitle__security": "عنوان امنیت",
+      "profileSection": {
+        "title": "آواتار",
+        "primaryButton": "بروزرسانی آواتار"
+      },
+      "usernameSection": {
+        "title": "نام کاربری",
+        "primaryButton__updateUsername": "به‌روزرسانی نام کاربری",
+        "primaryButton__setUsername": "تنظیم نام کاربری"
+      },
+      "emailAddressesSection": {
+        "title": "ایمیل",
+        "primaryButton": "اضافه کردن ایمیل  ",
+        "detailsAction__primary": "اقدام",
+        "detailsAction__nonPrimary": "تنظیم به عنوان ایمیل اصلی",
+        "detailsAction__unverified": "اعتبار سنجی",
+        "destructiveAction": "حذف ایمیل  "
+      },
+      "phoneNumbersSection": {
+        "title": "عنوان",
+        "primaryButton": "دکمه اصلی",
+        "detailsAction__primary": "اقدام اصلی",
+        "detailsAction__nonPrimary": "اقدام غیر اصلی",
+        "detailsAction__unverified": "اقدام تایید نشده",
+        "destructiveAction": "اقدام مخرب"
+      },
+      "connectedAccountsSection": {
+        "title": "حساب های متصل",
+        "primaryButton": "افزودن حساب",
+        "actionLabel__connectionFailed": "اتصال ناموفق",
+        "actionLabel__reauthorize": "مجدداً مجوز دهید",
+        "subtitle__reauthorize": "زیرعنوان مجدداً مجوز دهید",
+        "subtitle__disconnected": "زیرعنوان قطع شده",
+        "destructiveActionTitle": "قطع اتصال",
+        "oauthEmailAlreadyClaimed": "ایمیل مرتبط با این حساب OAuth قبلاً توسط کاربر دیگری استفاده شده است."
+      },
+
+      "enterpriseAccountsSection": {
+        "title": "عنوان"
+      },
+      "passwordSection": {
+        "title": "رمزعبور",
+        "primaryButton__updatePassword": "به‌روزرسانی رمز عبور",
+        "primaryButton__setPassword": "تنظیم رمز عبور"
+      },
+      "passkeysSection": {
+        "title": "عنوان",
+        "menuAction__rename": "تغییر نام",
+        "menuAction__destructive": "اقدام مخرب"
+      },
+      "mfaSection": {
+        "title": "عنوان",
+        "primaryButton": "دکمه اصلی",
+        "phoneCode": {
+          "destructiveActionLabel": "برچسب اقدام مخرب",
+          "actionLabel__setDefault": "تنظیم به عنوان پیش‌فرض"
+        },
+        "backupCodes": {
+          "headerTitle": "عنوان هدر",
+          "title__regenerate": "تولید مجدد",
+          "subtitle__regenerate": "زیرعنوان تولید مجدد",
+          "actionLabel__regenerate": "برچسب اقدام تولید مجدد"
+        },
+        "totp": {
+          "headerTitle": "عنوان هدر",
+          "destructiveActionTitle": "عنوان اقدام مخرب"
+        }
+      },
+      "activeDevicesSection": {
+        "title": "دستگاه های فعال",
+        "destructiveAction": "حذف"
+      },
+      "web3WalletsSection": {
+        "title": "عنوان",
+        "primaryButton": "دکمه اصلی",
+        "destructiveAction": "اقدام مخرب"
+      },
+      "dangerSection": {
+        "title": "حذف حساب",
+        "deleteAccountButton": "حذف حساب"
+      }
+    },
+    "profilePage": {
+      "title": "عنوان",
+      "imageFormTitle": "عنوان فرم تصویر",
+      "imageFormSubtitle": "زیرعنوان فرم تصویر",
+      "imageFormDestructiveActionSubtitle": "زیرعنوان اقدام مخرب فرم تصویر",
+      "fileDropAreaHint": "راهنمای منطقه رها کردن فایل",
+      "readonly": "فقط خواندنی",
+      "successMessage": "پیام موفقیت",
+      "readonly": "فقط خواندنی"
+    },
+    "usernamePage": {
+      "successMessage": "پیام موفقیت",
+      "title__set": "تنظیم عنوان",
+      "title__update": "به‌روزرسانی عنوان"
+    },
+    "emailAddressPage": {
+      "title": "اضافه کردن ایمیل",
+      "verifyTitle": "کد ارسال شده به ایمیل را وارد کنید",
+      "formHint": "قبل از اینکه این آدرس ایمیل به حساب شما اضافه شود، باید آن را تأیید کنید",
+      "emailCode": {
+        "formHint": "راهنمای فرم",
+        "formTitle": "عنوان فرم",
+        "formSubtitle": "",
+        "resendButton": " ارسال مجدد",
+        "successMessage": "پیام موفقیت"
+      },
+      "emailLink": {
+        "formHint": "راهنمای فرم",
+        "formTitle": "عنوان فرم",
+        "formSubtitle": "زیرعنوان فرم",
+        "resendButton": "دکمه ارسال مجدد",
+        "successMessage": "پیام موفقیت"
+      },
+      "enterpriseSSOLink": {
+        "formSubtitle": "زیرعنوان فرم",
+        "formButton": "دکمه فرم"
+      },
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+    "passkeyScreen": {
+      "title__rename": "تغییر نام",
+      "subtitle__rename": "زیرعنوان تغییر نام",
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1"
+      }
+    },
+    "phoneNumberPage": {
+      "title": "عنوان",
+      "verifyTitle": "عنوان تایید",
+      "verifySubtitle": "زیرعنوان تایید",
+      "successMessage": "پیام موفقیت",
+      "infoText": "متن اطلاعات",
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+    "connectedAccountPage": {
+      "title": "شبکه",
+      "formHint": "راهنمای فرم",
+      "formHint__noAccounts": "راهنمای فرم بدون حساب",
+      "successMessage": "پیام موفقیت",
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+    "web3WalletPage": {
+      "title": "عنوان",
+      "subtitle__availableWallets": "زیرعنوان کیف پول‌های موجود",
+      "subtitle__unavailableWallets": "زیرعنوان کیف پول‌های ناموجود",
+      "web3WalletButtonsBlockButton": "دکمه بلوک دکمه‌های کیف پول وب۳",
+      "successMessage": "پیام موفقیت",
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+
+    "passwordPage": {
+      "successMessage__set": "با موفقیت ذخیره شد",
+      "successMessage__update": "با موفقیت بروزرسانی شد",
+      "successMessage__signOutOfOtherSessions": "پیام موفقیت خروج از سایر جلسات",
+      "checkboxInfoText__signOutOfOtherSessions": "توصیه می کنیم از دستگاه هایی که ممکن است از رمز عبور قدیمی شما استفاده کرده اند خارج شوید.",
+      "readonly": "فقط خواندنی",
+      "title__set": "تنظیم عنوان",
+      "title__update": "به‌روزرسانی رمزعبور",
+      "checkboxTitle": "dd"
+    },
+    "mfaPage": {
+      "title": "عنوان",
+      "formHint": "راهنمای فرم"
+    },
+    "mfaTOTPPage": {
+      "title": "ثبثب",
+      "verifyTitle": "عنوان تایید",
+      "verifySubtitle": "زیرعنوان تایید",
+      "successMessage": "پیام موفقیت",
+      "authenticatorApp": {
+        "infoText__ableToScan": "متن اطلاعات قابل اسکن",
+        "infoText__unableToScan": "متن اطلاعات غیرقابل اسکن",
+        "inputLabel__unableToScan1": "برچسب ورودی غیرقابل اسکن 1",
+        "inputLabel__unableToScan2": "برچسب ورودی غیرقابل اسکن 2",
+        "buttonAbleToScan__nonPrimary": "دکمه قابل اسکن غیر اصلی",
+        "buttonUnableToScan__nonPrimary": "دکمه غیرقابل اسکن غیر اصلی"
+      },
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+    "mfaPhoneCodePage": {
+      "title": "عنوان",
+      "primaryButton__addPhoneNumber": "افزودن شماره تلفن",
+      "backButton": "دکمه بازگشت",
+      "subtitle__availablePhoneNumbers": "زیرعنوان شماره‌های تلفن موجود",
+      "subtitle__unavailablePhoneNumbers": "زیرعنوان شماره‌های تلفن ناموجود",
+      "successTitle": "عنوان موفقیت",
+      "successMessage1": "پیام موفقیت 1",
+      "successMessage2": "پیام موفقیت 2",
+      "removeResource": {
+        "title": "عنوان",
+        "messageLine1": "خط پیام 1",
+        "messageLine2": "خط پیام 2",
+        "successMessage": "پیام موفقیت"
+      }
+    },
+    "backupCodePage": {
+      "title": "عنوان",
+      "title__codelist": "عنوان لیست کد",
+      "subtitle__codelist": "زیرعنوان لیست کد",
+      "infoText1": "متن اطلاعات 1",
+      "infoText2": "متن اطلاعات 2",
+      "successSubtitle": "زیرعنوان موفقیت",
+      "successMessage": "پیام موفقیت",
+      "actionLabel__copy": "برچسب اقدام کپی",
+      "actionLabel__copied": "برچسب اقدام کپی شده",
+      "actionLabel__download": "برچسب اقدام دانلود",
+      "actionLabel__print": "برچسب اقدام چاپ"
+    },
+    "deletePage": {
+      "title": "حذف حساب",
+      "messageLine1": "آیا مطمئن هستید که می خواهید حساب خود را حذف کنید؟",
+      "messageLine2": "این عمل دائمی و غیر قابل برگشت است.",
+      "actionDescription": "برای ادامه، «Delete account» را در فیلد زیر تایپ کنید.",
+      "confirm": "تایید"
+    }
+  },
+  "userButton": {
+    "action__manageAccount": "مدیریت حساب",
+    "action__signOut": "خروج",
+    "action__signOutAll": "خروج از همه",
+    "action__addAccount": "افزودن حساب"
+  },
+  "organizationSwitcher": {
+    "personalWorkspace": "فضای کاری شخصی",
+    "notSelected": "انتخاب نشده",
+    "action__createOrganization": "ایجاد سازمان",
+    "action__manageOrganization": "مدیریت سازمان",
+    "action__invitationAccept": "پذیرش دعوت",
+    "action__suggestionsAccept": "پذیرش پیشنهادات",
+    "suggestionsAcceptedLabel": "برچسب پیشنهادات پذیرفته شده"
+  },
+  "impersonationFab": {
+    "title": "عنوان",
+    "action__signOut": "خروج"
+  },
+  "organizationProfile": {
+    "navbar": {
+      "title": "عنوان",
+      "description": "توضیحات",
+      "general": "عمومی",
+      "members": "اعضا"
+    },
+    "badge__unverified": "تایید نشده",
+    "badge__automaticInvitation": "دعوت خودکار",
+    "badge__automaticSuggestion": "پیشنهاد خودکار",
+    "badge__manualInvitation": "دعوت دستی",
+    "start": {
+      "headerTitle__members": "عنوان هدر اعضا",
+      "headerTitle__general": "عنوان هدر عمومی",
+      "profileSection": {
+        "title": "عنوان",
+        "primaryButton": "دکمه اصلی",
+        "uploadAction__title": "عنوان اقدام آپلود"
+      }
+    },
+    "profilePage": {
+      "title": "عنوان",
+      "successMessage": "پیام موفقیت",
+      "dangerSection": {
+        "title": "عنوان",
+        "leaveOrganization": {
+          "title": "عنوان",
+          "messageLine1": "خط پیام 1",
+          "messageLine2": "خط پیام 2",
+          "successMessage": "پیام موفقیت",
+          "actionDescription": "توضیحات اقدام"
+        },
+        "deleteOrganization": {
+          "title": "عنوان",
+          "messageLine1": "خط پیام 1",
+          "messageLine2": "خط پیام 2",
+          "actionDescription": "توضیحات اقدام",
+          "successMessage": "پیام موفقیت"
+        }
+      },
+      "domainSection": {
+        "title": "عنوان",
+        "subtitle": "زیرعنوان",
+        "primaryButton": "دکمه اصلی",
+        "menuAction__verify": "تایید",
+        "menuAction__remove": "حذف",
+        "menuAction__manage": "مدیریت"
+      }
+    },
+    "createDomainPage": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان"
+    },
+    "verifyDomainPage": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "subtitleVerificationCodeScreen": "زیرعنوان صفحه کد تایید",
+      "formTitle": "عنوان فرم",
+      "formSubtitle": "زیرعنوان فرم",
+      "resendButton": "دکمه ارسال مجدد"
+    },
+    "verifiedDomainPage": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "start": {
+        "headerTitle__enrollment": "عنوان هدر ثبت‌نام",
+        "headerTitle__danger": "عنوان هدر خطر"
+      },
+      "enrollmentTab": {
+        "subtitle": "زیرعنوان",
+        "manualInvitationOption__label": "برچسب گزینه دعوت دستی",
+        "manualInvitationOption__description": "توضیحات گزینه دعوت دستی",
+        "automaticInvitationOption__label": "برچسب گزینه دعوت خودکار",
+        "automaticInvitationOption__description": "توضیحات گزینه دعوت خودکار",
+        "automaticSuggestionOption__label": "برچسب گزینه پیشنهاد خودکار",
+        "automaticSuggestionOption__description": "توضیحات گزینه پیشنهاد خودکار",
+        "calloutInfoLabel": "برچسب اطلاعات",
+        "calloutInvitationCountLabel": "برچسب تعداد دعوت",
+        "calloutSuggestionCountLabel": "برچسب تعداد پیشنهادات"
+      },
+      "dangerTab": {
+        "removeDomainTitle": "عنوان حذف دامنه",
+        "removeDomainSubtitle": "زیرعنوان حذف دامنه",
+        "removeDomainActionLabel__remove": "حذف",
+        "calloutInfoLabel": "برچسب اطلاعات"
+      }
+    },
+    "invitePage": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "successMessage": "پیام موفقیت",
+      "detailsTitle__inviteFailed": "عنوان جزئیات دعوت ناموفق",
+      "formButtonPrimary__continue": "ادامه",
+      "selectDropdown__role": "نقش"
+    },
+    "removeDomainPage": {
+      "title": "عنوان",
+      "messageLine1": "خط پیام 1",
+      "messageLine2": "خط پیام 2",
+      "successMessage": "پیام موفقیت"
+    },
+    "membersPage": {
+      "detailsTitle__emptyRow": "عنوان جزئیات سطر خالی",
+      "action__invite": "دعوت",
+      "action__search": "جستجو",
+      "start": {
+        "headerTitle__members": "عنوان هدر اعضا",
+        "headerTitle__invitations": "عنوان هدر دعوت‌ها",
+        "headerTitle__requests": "عنوان هدر درخواست‌ها"
+      },
+      "activeMembersTab": {
+        "tableHeader__user": "عنوان هدر جدول کاربر",
+        "tableHeader__joined": "عنوان هدر جدول پیوستن",
+        "tableHeader__role": "عنوان هدر جدول نقش",
+        "tableHeader__actions": "عنوان هدر جدول اقدامات",
+        "menuAction__remove": "حذف"
+      },
+      "invitedMembersTab": {
+        "tableHeader__invited": "عنوان هدر جدول دعوت شده",
+        "menuAction__revoke": "لغو"
+      },
+      "invitationsTab": {
+        "table__emptyRow": "سطر خالی جدول",
+        "autoInvitations": {
+          "headerTitle": "عنوان هدر",
+          "headerSubtitle": "زیرعنوان هدر",
+          "primaryButton": "دکمه اصلی"
+        }
+      },
+      "requestsTab": {
+        "tableHeader__requested": "عنوان هدر جدول درخواست شده",
+        "menuAction__approve": "تایید",
+        "menuAction__reject": "رد",
+        "table__emptyRow": "سطر خالی جدول",
+        "autoSuggestions": {
+          "headerTitle": "عنوان هدر",
+          "headerSubtitle": "زیرعنوان هدر",
+          "primaryButton": "دکمه اصلی"
+        }
+      }
+    }
+  },
+  "createOrganization": {
+    "title": "عنوان",
+    "formButtonSubmit": "ارسال",
+    "invitePage": {
+      "formButtonReset": "برگشت"
+    }
+  },
+  "organizationList": {
+    "createOrganization": "ایجاد سازمان",
+    "title": "عنوان",
+    "titleWithoutPersonal": "عنوان بدون شخصی",
+    "subtitle": "زیرعنوان",
+    "action__invitationAccept": "پذیرش دعوت",
+    "invitationAcceptedLabel": "برچسب دعوت پذیرفته شده",
+    "action__suggestionsAccept": "پذیرش پیشنهادات",
+    "suggestionsAcceptedLabel": "برچسب پیشنهادات پذیرفته شده",
+    "action__createOrganization": "ایجاد سازمان"
+  },
+  "dates": {
+    "previous6Days": "۶ روز قبل",
+    "lastDay": "آخرین روز",
+    "sameDay": "همان روز",
+    "nextDay": "روز بعد",
+    "next6Days": "۶ روز بعد",
+    "numeric": "عددی"
+  },
+  "waitlist": {
+    "start": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "formButton": "دکمه فرم",
+      "actionText": "متن اقدام",
+      "actionLink": "لینک اقدام"
+    },
+    "success": {
+      "title": "عنوان",
+      "subtitle": "زیرعنوان",
+      "message": "پیام"
+    }
+  },
+  "passwordComplexity": {
+    "goodPassword": "رمز عبور شما تمام شرایط لازم را دارد."
+  },
+  "goodPassword": "رمز عبور شما تمام شرایط لازم را دارد.",
   "formButtonPrimary": "ادامه",
   "formButtonPrimary__verify": "تأیید",
   "formButtonReset": "لغو",
@@ -89,48 +691,66 @@
   "formFieldLabel__password": "رمز عبور",
   "formFieldInputPlaceholder__phoneNumber": "شماره تلفن خود را وارد کنید",
   "formFieldLabel__phoneNumber": "شماره تلفن",
- 
-    "socialButtonsBlockButton": "ادامه با {{provider}}",
-    "socialButtonsBlockButtonManyInView": "{{provider}}",
-    "providers": {
-      "google": "گوگل",
-      "github": "گیت‌هاب",
-      "facebook": "فیس‌بوک",
-      "apple": "اپل"
-    },
-  
-  "loading": "در حال بارگذاری...",
-  "dates": {
-    "lastDay": "دیروز در {{ date | timeString('fa-IR') }}",
-    "next6Days": "{{ date | weekday('fa-IR','long') }} در {{ date | timeString('fa-IR') }}",
-    "sameDay": "امروز در {{ date | timeString('fa-IR') }}"
+
+  "socialButtonsBlockButton": "ادامه با {{provider}}",
+  "socialButtonsBlockButtonManyInView": "{{provider}}",
+  "providers": {
+    "google": "گوگل",
+    "github": "گیت‌هاب",
+    "facebook": "فیس‌بوک",
+    "apple": "اپل"
   },
+
+  "loading": "در حال بارگذاری...",
+
+  "resetPassword": {
+    "title": "بازیابی رمز عبور",
+    "subtitle": "رمز عبور جدید خود را وارد کنید",
+    "successMessage": "رمز عبور شما با موفقیت تغییر یافت."
+  },
+
   "signIn": {
+    "alternativeMethods": {
+      "actionLink": "یا با روش دیگری وارد شوید",
+      "actionText": "هیچ کدام از این‌ها را ندارید؟"
+    },
     "start": {
-      "title": "ورود به {{applicationName}}",
+      "title": " ورود به لینکیفای",
       "subtitle": "برای ادامه وارد شوید",
       "actionText": "حساب کاربری ندارید؟",
       "actionLink": "ثبت‌نام"
     },
     "password": {
       "title": "رمز عبور خود را وارد کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": " برای ادامه به لینکیفای",
       "actionLink": "رمز عبور را فراموش کرده‌اید؟"
     },
     "emailCode": {
       "title": "ایمیل خود را تأیید کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": " برای ادامه به لینکیفای",
       "formTitle": "کد تأیید",
       "formSubtitle": "کد تأییدی که به ایمیل شما ارسال شده را وارد کنید",
       "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
     },
     "phoneCode": {
       "title": "شماره تلفن خود را تأیید کنید",
-      "subtitle": "برای ادامه به {{applicationName}}",
+      "subtitle": "برای ادامه به لینکیفای",
       "formTitle": "کد تأیید",
       "formSubtitle": "کد تأییدی که به شماره تلفن شما ارسال شده را وارد کنید",
       "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
     }
+  },
+
+  "formFieldAction__forgotPassword": "رمز عبور را فراموش کرده‌اید؟",
+  "dividerText": "یا",
+  "backButton": "بازگشت",
+  "alternativeMethods": {
+    "actionText": "هیچ کدام از این‌ها را ندارید؟",
+    "actionLink": "کمک بگیرید",
+    "blockButton__emailCode": "ارسال کد به {{identifier}}",
+    "blockButton__password": "ادامه با رمز عبور",
+    "blockButton__phoneCode": "ارسال کد به شماره تلفن",
+    "blockButton__totp": "استفاده از برنامه احراز هویت"
   },
   "forgotPassword": {
     "title": "بازیابی رمز عبور",
@@ -138,28 +758,15 @@
     "formTitle": "بازیابی رمز عبور",
     "formSubtitle": "لینک بازیابی رمز عبور به ایمیل شما ارسال خواهد شد",
     "resendButton": "لینک را دریافت نکردید؟ ارسال مجدد",
-    "successMessage": "لینک بازیابی رمز عبور به ایمیل شما ارسال شد."
-  },
-  "userProfile": {
-    "profilePage": {
-      "title": "پروفایل کاربری",
-      "subtitle": "اطلاعات شخصی خود را به‌روزرسانی کنید",
-      "successMessage": "پروفایل شما با موفقیت به‌روزرسانی شد."
-    },
-    "passwordPage": {
-      "title": "تغییر رمز عبور",
-      "subtitle": "رمز عبور جدید خود را وارد کنید",
-      "successMessage": "رمز عبور شما با موفقیت تغییر یافت."
-    },
-    "emailAddressPage": {
-      "title": "مدیریت ایمیل‌ها",
-      "subtitle": "ایمیل‌های خود را اضافه یا حذف کنید",
-      "successMessage": "ایمیل شما با موفقیت تأیید شد."
-    },
-    "phoneNumberPage": {
-      "title": "مدیریت شماره تلفن‌ها",
-      "subtitle": "شماره تلفن‌های خود را اضافه یا حذف کنید",
-      "successMessage": "شماره تلفن شما با موفقیت تأیید شد."
+    "successMessage": "لینک بازیابی رمز عبور به ایمیل شما ارسال شد.",
+    "alternativeMethods": {
+      "actionLink": "یا با روش دیگری وارد شوید",
+      "actionText": "هیچ کدام از این‌ها را ندارید؟"
     }
+  },
+  "getHelp": {
+    "title": "دریافت کمک",
+    "description": "اگر در ورود به حساب خود مشکل دارید، برای ما ایمیل بفرستید و ما در اسرع وقت دسترسی شما را بازیابی خواهیم کرد.",
+    "emailSupport": "پشتیبانی ایمیل"
   }
 }
