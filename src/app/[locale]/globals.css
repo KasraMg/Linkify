@@ -17,58 +17,67 @@ body {
   display: none !important;
 }
 
+[lang="fa"] p,
+[lang="fa"] span {
+  direction: rtl;
+}
 [lang="fa"] .cl-internal-hqshcm {
   left: 0px !important;
   right: auto !important;
 }
-[lang="fa"] .cl-internal-1yma7i9{
+[lang="fa"] .cl-internal-1yma7i9 {
   direction: rtl !important;
 }
-[lang="fa"] .cl-internal-1rpdi70{
-flex-direction: row-reverse !important;
+[lang="fa"] .cl-internal-1rpdi70 {
+  flex-direction: row-reverse !important;
 }
-[lang="fa"] .cl-internal-1rpdi70{
-flex-direction: row-reverse !important;
+[lang="fa"] .cl-internal-1rpdi70 {
+  flex-direction: row-reverse !important;
 }
-[lang="fa"] .cl-internal-2iusy0{
-flex-direction: row-reverse !important;
+[lang="fa"] .cl-internal-2iusy0 {
+  flex-direction: row-reverse !important;
 }
-[lang="fa"] .cl-page { 
-direction: rtl;
+[lang="fa"] .cl-page {
+  direction: rtl;
 }
-[lang="fa"] .cl-navbarButton { 
-    justify-content: right !important;
-    flex-direction: row-reverse;
+[lang="fa"] .cl-navbarButton {
+  justify-content: right !important;
+  flex-direction: row-reverse;
 }
-[lang="fa"] .cl-internal-rk8nkz{
+[lang="fa"] .cl-internal-rk8nkz {
   text-align: right !important;
 }
-[lang="fa"] .cl-internal-186wk34{
+[lang="fa"] .cl-internal-186wk34 {
   right: auto !important;
   left: 0.5rem;
 }
 [lang="fa"] .cl-internal-h1ijb9 {
-flex-direction: row-reverse !important;
-text-align: right;
+  flex-direction: row-reverse !important;
+  text-align: right;
 }
-[lang="fa"] .cl-form{
-    direction: rtl;
+[lang="fa"] .cl-form {
+  direction: rtl;
 }
-[lang="fa"] .cl-form input:nth-child(1):not(.cl-otpCodeFieldInput){
- padding: 0.375rem 0.75rem 0.375rem 2rem !important;
-
+[lang="fa"] .cl-form input:nth-child(1):not(.cl-otpCodeFieldInput) {
+  padding: 0.375rem 0.75rem 0.375rem 2rem !important;
 }
-[lang="fa"] .cl-internal-1yma7i9 input{
- padding: 0.375rem 0.75rem 0.375rem 2rem !important;
-
+[lang="fa"] .cl-internal-1yma7i9 input {
+  padding: 0.375rem 0.75rem 0.375rem 2rem !important;
 }
-[lang="fa"] .cl-otpCodeFieldInput{
-padding: 0.125rem 0px !important;
+[lang="fa"] .cl-otpCodeFieldInput {
+  padding: 0.125rem 0px !important;
 }
-[lang="fa"] .cl-internal-1c4ikgf { 
+[lang="fa"] .cl-footerAction__havingTrouble {
+  display: none !important;
+}
+[lang="fa"] .cl-userButtonPopoverMain {
+  direction: rtl;
+}
+[lang="fa"] .cl-rootBox p {
+  direction: rtl;
+}
+[lang="fa"] .cl-internal-1c4ikgf {
   margin-right: 0.5rem;
-  transform: rotateY(180deg); 
+  transform: rotateY(180deg);
   margin-left: 0 !important;
 }
-
- 

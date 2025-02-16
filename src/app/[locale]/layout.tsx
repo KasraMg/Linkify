@@ -9,18 +9,31 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import localFont from "next/font/local";
 
 import en from "../../../messages/en.json";
 import fa from "../../../messages/fa.json";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const vazirmatn = localFont({
+  src: [
+    {
+      path: "../../fonts/vazir/Vazir-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/vazir/Vazir-Medium.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/vazir/Vazir-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-vazir",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -39,23 +52,24 @@ export default async function RootLayout({
 
   return (
     <ClerkProvider
-    
       appearance={{
         baseTheme: dark,
-        
       }}
-      
       localization={locale === "en" ? en : fa}
     >
       <html lang={locale}>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} bg-[#ededed] text-black antialiased dark:bg-[#0a0a0a] dark:text-white`}
+          className={`${vazirmatn.variable} bg-[#ededed] text-black antialiased dark:bg-[#0a0a0a] dark:text-white`}
         >
           <ThemeProvider attribute="class">
             <NextIntlClientProvider locale={locale} messages={messages}>
               <Navbar />
               <HeroUiProvider>
-                <div className="relative z-50">{children}</div>
+                <div
+                  className={`relative z-50 ${locale === "fa" ? "font-vazir" : ""}`}
+                >
+                  {children}
+                </div>
               </HeroUiProvider>
               <ShootingStars />
             </NextIntlClientProvider>

@@ -10,15 +10,16 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import { Button } from "@heroui/button";
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const t = useTranslations("Navbar");
+  const locale = useLocale();
 
   return (
-    <div className="relative z-[999] flex items-center justify-between border-b border-[#0a0a0a] bg-[#00000008] px-4 py-2 dark:border-white">
+    <div dir={locale === 'fa' ? "rtl" : 'ltr'} className="relative z-[999] flex items-center justify-between border-b border-[#0a0a0a] bg-[#00000008] px-4 py-2 dark:border-white">
       <div className="flex items-center gap-1">
         <Image
           src={"/logo.png"}
@@ -32,12 +33,12 @@ const Navbar = () => {
         {theme !== "dark" ? (
           <MdOutlineDarkMode
             onClick={() => setTheme("dark")}
-            className="ml-5 cursor-pointer text-2xl transition-colors hover:text-red-600"
+            className={`${locale === 'fa' ? 'mr-5' : 'ml-5'} cursor-pointer text-2xl transition-colors hover:text-red-600`}
           />
         ) : (
           <CiLight
             onClick={() => setTheme("light")}
-            className="ml-5 cursor-pointer text-2xl transition-colors hover:text-red-600"
+            className={`${locale === 'fa' ? 'mr-5' : 'ml-5'} cursor-pointer text-2xl transition-colors hover:text-red-600`}
           />
         )}
       </div>
@@ -46,15 +47,18 @@ const Navbar = () => {
           <UserButton showName />
         </SignedIn>
 
-        <Button variant="ghost">
-          <SignedOut>
-            <SignInButton mode="modal" />
-          </SignedOut>
-          {` / `}
-          <SignedOut>
-            <SignUpButton mode="modal" />
-          </SignedOut>
-        </Button>
+        <SignedOut>
+          <Button variant="ghost">
+            <SignInButton mode="modal" >
+            {locale === 'fa' ? 'ورود' : 'Login'}
+            </SignInButton>
+            {` / `}
+            <SignUpButton mode="modal">
+            {locale === 'fa' ? 'ثبت نام' : 'Register'}
+
+            </SignUpButton>
+          </Button>
+        </SignedOut>
 
         <LanguageSwitcher />
       </div>

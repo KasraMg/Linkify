@@ -2,23 +2,23 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import {   useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { useTheme } from "next-themes";
-import { useTranslations } from "next-intl";
-import { Button } from "@heroui/button"; 
+import { useLocale, useTranslations } from "next-intl";
+import { Button } from "@heroui/button";
 import { useClerk } from "@clerk/nextjs";
 export default function Home() {
   const [media, setMedia] = useState("Instagram");
   const [link, setLink] = useState("");
-  const { theme, setTheme } = useTheme();
+  const locale = useLocale();
 
-  const t = useTranslations("HomePage"); 
- 
+  const t = useTranslations("HomePage");
+
   return (
     <div className="relative h-full min-h-screen w-full">
       <Image
@@ -58,21 +58,21 @@ export default function Home() {
       <div className="relative z-50 text-center">
         <p className="mt-10 text-2xl font-bold">{t("title")}</p>
 
-        <div className="relative mx-auto mt-5 flex w-max gap-2">
+        <div dir={locale === 'en' ? 'ltr' : 'rtl'} className="relative mx-auto mt-5 flex w-max gap-2">
           <input
             type="text"
             value={link}
             onChange={(event) => setLink(event.target.value)}
-            placeholder={`Paste Url ${media}`}
-            className="w-[300px] rounded-md bg-[#D9D3D8] p-2 pr-8 text-black outline-0 transition-transform-colors-opacity placeholder:text-black dark:bg-[#3f3f46] dark:text-white placeholder:dark:text-white"
+            placeholder={`${media === "Instagram" ? t("instagramPlaceHolder") : t("youtubePlaceHolder")}`}
+            className={`${locale === 'fa' ? "pl-8" : "pr-8"} w-[300px] rounded-md bg-[#D9D3D8] p-2 text-black outline-0 transition-transform-colors-opacity placeholder:text-black dark:bg-[#3f3f46] dark:text-white placeholder:dark:text-white`}
           />
           {link ? (
             <IoMdClose
               onClick={() => setLink("")}
-              className="absolute right-28 top-2.5 cursor-pointer text-xl text-black dark:text-white"
+              className={`${locale === 'fa' ? "left-24" : "right-28"} absolute top-2.5 cursor-pointer text-xl text-black dark:text-white`}
             />
           ) : (
-            <IoCopyOutline className="absolute right-28 top-2.5 cursor-pointer text-xl text-black dark:text-white" />
+            <IoCopyOutline className={`${locale === 'fa' ? "left-24" : "right-28"} absolute top-2.5 cursor-pointer text-xl text-black dark:text-white`} />
           )}
 
           <Button variant="solid" className="rounded-md">

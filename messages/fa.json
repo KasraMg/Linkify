@@ -4,7 +4,7 @@
     "description": "ابتدا بر روی آیکون پلتفرم مورد نظر خود کلیک کنید و سپس لینک پست رو در فیلد قرار بدید.",
     "download": "دانلود",
     "youtubePlaceHolder": "لینک یوتیوب رو قرار بدید",
-    "instagramPlaceHolder": "لینک اینستگرام رو قرار بدید"
+    "instagramPlaceHolder": "لینک اینستاگرام رو قرار بدید"
   },
   "Navbar": {
     "title": "لینکیفای",
@@ -64,7 +64,7 @@
     "external_account_not_found": "حساب خارجی یافت نشد.",
     "identification_deletion_failed": "حذف شناسه با مشکل مواجه شد.",
     "phone_number_exists": "این شماره تلفن قبلاً ثبت شده است.",
-    "form_identifier_not_found": "شناسه وارد شده یافت نشد.",
+    "form_identifier_not_found": "ایمیل وارد شده یافت نشد.",
     "captcha_unavailable": "کپچا در دسترس نیست.",
     "captcha_invalid": "کپچای وارد شده معتبر نیست.",
     "passkey_not_supported": "کلید عبور پشتیبانی نمی‌شود.",
@@ -712,7 +712,9 @@
   "signIn": {
     "alternativeMethods": {
       "actionLink": "یا با روش دیگری وارد شوید",
-      "actionText": "هیچ کدام از این‌ها را ندارید؟"
+      "actionText": "هیچ کدام از این‌ها را ندارید؟",
+      "title": "استفاده از روش های دیگر",
+      "subtitle": "مشکلی دارید؟ می‌توانید از یکی از این روش‌ها برای ورود استفاده کنید."
     },
     "start": {
       "title": " ورود به لینکیفای",
@@ -738,6 +740,22 @@
       "formTitle": "کد تأیید",
       "formSubtitle": "کد تأییدی که به شماره تلفن شما ارسال شده را وارد کنید",
       "resendButton": "کد را دریافت نکردید؟ ارسال مجدد"
+    },
+    "forgotPassword": {
+      "title": "بازیابی رمز عبور",
+      "subtitle": "برای بازیابی رمز عبور، ایمیل یا شماره تلفن خود را وارد کنید",
+      "formTitle": "بازیابی رمز عبور",
+      "formSubtitle": "لینک بازیابی رمز عبور به ایمیل شما ارسال خواهد شد",
+      "resendButton": "لینک را دریافت نکردید؟ ارسال مجدد",
+      "successMessage": "لینک بازیابی رمز عبور به ایمیل شما ارسال شد.",
+      "alternativeMethods": {
+        "actionLink": "یا با روش دیگری وارد شوید",
+        "actionText": "هیچ کدام از این‌ها را ندارید؟"
+      },
+      "useAnotherMethod": "از روش دیگری استفاده کنید",
+      "facingIssuesSignIn": "مشکلی دارید؟ می‌توانید از هر یک از این روش‌ها برای ورود استفاده کنید.",
+      "alternative_methods__use_another": "استفاده از روش دیگر",
+      "alternative_methods__help": "مشکلی دارید؟ می‌توانید از یکی از این روش‌ها برای ورود استفاده کنید."
     }
   },
 
@@ -752,6 +770,74 @@
     "blockButton__phoneCode": "ارسال کد به شماره تلفن",
     "blockButton__totp": "استفاده از برنامه احراز هویت"
   },
+
+  "getHelp": {
+    "title": "دریافت کمک",
+    "description": "اگر در ورود به حساب خود مشکل دارید، برای ما ایمیل بفرستید و ما در اسرع وقت دسترسی شما را بازیابی خواهیم کرد.",
+    "emailSupport": "پشتیبانی ایمیل"
+  },
+
+  "formFieldLabel__emailAddresses": "آدرس‌های ایمیل",
+  "formFieldLabel__currentPassword": "رمز عبور فعلی",
+  "formFieldLabel__newPassword": "رمز عبور جدید",
+  "formFieldLabel__confirmPassword": "تأیید رمز عبور",
+  "formFieldLabel__signOutOfOtherSessions": "خروج از سایر دستگاه‌ها",
+  "formFieldLabel__automaticInvitations": "دعوت‌های خودکار",
+  "formFieldLabel__firstName": "نام",
+  "formFieldLabel__lastName": "نام خانوادگی",
+  "formFieldLabel__backupCode": "کد پشتیبان",
+  "formFieldLabel__organizationName": "نام سازمان",
+  "formFieldLabel__organizationSlug": "شناسه سازمان",
+  "formFieldLabel__organizationDomain": "دامنه سازمان",
+  "formFieldLabel__organizationDomainEmailAddress": "آدرس ایمیل دامنه سازمان",
+  "formFieldLabel__organizationDomainEmailAddressDescription": "آدرس ایمیل مرتبط با دامنه سازمان خود را وارد کنید",
+  "formFieldLabel__organizationDomainDeletePending": "حذف دامنه در انتظار",
+  "formFieldLabel__confirmDeletion": "تأیید حذف",
+  "formFieldLabel__role": "نقش",
+  "formFieldLabel__passkeyName": "نام کلید امنیتی",
+  "formFieldInputPlaceholder__emailAddress": "آدرس ایمیل خود را وارد کنید",
+  "formFieldInputPlaceholder__emailAddresses": "آدرس‌های ایمیل را وارد کنید",
+  "formFieldInputPlaceholder__phoneNumber": "شماره تلفن خود را وارد کنید",
+  "formFieldInputPlaceholder__username": "نام کاربری خود را وارد کنید",
+  "formFieldInputPlaceholder__emailAddress_username": "ایمیل یا نام کاربری خود را وارد کنید",
+  "formFieldInputPlaceholder__password": "رمز عبور خود را وارد کنید",
+  "formFieldInputPlaceholder__firstName": "نام خود را وارد کنید",
+  "formFieldInputPlaceholder__lastName": "نام خانوادگی خود را وارد کنید",
+  "formFieldInputPlaceholder__backupCode": "کد پشتیبان خود را وارد کنید",
+  "formFieldInputPlaceholder__organizationName": "نام سازمان را وارد کنید",
+  "formFieldInputPlaceholder__organizationSlug": "شناسه سازمان را وارد کنید",
+  "formFieldInputPlaceholder__organizationDomain": "دامنه سازمان را وارد کنید",
+  "formFieldInputPlaceholder__organizationDomainEmailAddress": "آدرس ایمیل دامنه سازمان را وارد کنید",
+  "formFieldInputPlaceholder__confirmDeletionUserAccount": "حذف حساب کاربری را تأیید کنید",
+  "formFieldError__notMatchingPasswords": "رمزهای عبور مطابقت ندارند",
+  "formFieldError__matchingPasswords": "رمزهای عبور مطابقت دارند",
+  "formFieldError__verificationLinkExpired": "لینک تأیید منقضی شده است",
+  "formFieldAction__forgotPassword": "رمز عبور را فراموش کرده‌اید؟",
+  "formFieldHintText__optional": "اختیاری",
+  "formFieldHintText__slug": "شناسه",
+  "formButtonPrimary": "ارسال",
+  "formButtonPrimary__verify": "تأیید",
+  "signInEnterPasswordTitle": "رمز عبور خود را وارد کنید",
+  "backButton": "بازگشت",
+  "footerActionLink__useAnotherMethod": "استفاده از روش دیگر",
+  "badge__primary": "اصلی",
+  "badge__thisDevice": "این دستگاه",
+  "badge__userDevice": "دستگاه کاربر",
+  "badge__otherImpersonatorDevice": "دستگاه جعل‌کننده دیگر",
+  "badge__default": "پیش‌فرض",
+  "badge__unverified": "تأیید نشده",
+  "badge__requiresAction": "نیاز به اقدام",
+  "badge__you": "شما",
+  "footerPageLink__help": "راهنما",
+  "footerPageLink__privacy": "حریم خصوصی",
+  "footerPageLink__terms": "قوانین",
+  "paginationButton__previous": "قبلی",
+  "paginationButton__next": "بعدی",
+  "paginationRowText__displaying": "نمایش",
+  "paginationRowText__of": "از",
+  "membershipRole__admin": "مدیر",
+  "membershipRole__basicMember": "عضو پایه",
+  "membershipRole__guestMember": "عضو مهمان",
   "forgotPassword": {
     "title": "بازیابی رمز عبور",
     "subtitle": "برای بازیابی رمز عبور، ایمیل یا شماره تلفن خود را وارد کنید",
@@ -762,11 +848,8 @@
     "alternativeMethods": {
       "actionLink": "یا با روش دیگری وارد شوید",
       "actionText": "هیچ کدام از این‌ها را ندارید؟"
-    }
-  },
-  "getHelp": {
-    "title": "دریافت کمک",
-    "description": "اگر در ورود به حساب خود مشکل دارید، برای ما ایمیل بفرستید و ما در اسرع وقت دسترسی شما را بازیابی خواهیم کرد.",
-    "emailSupport": "پشتیبانی ایمیل"
+    },
+    "useAnotherMethod": "از روش دیگری استفاده کنید",
+    "facingIssuesSignIn": "مشکلی دارید؟ می‌توانید از هر یک از این روش‌ها برای ورود استفاده کنید."
   }
 }
